@@ -1,0 +1,10 @@
+# << URLs Amigaveis 
+RewriteEngine On
+# >> Liberar o redirect COND e RULE quando estiver no ar.
+#RewriteCond %{HTTP_HOST} ^site.com.br
+#RewriteRule ^ http://www.site.com.br%{REQUEST_URI} [L,R=301]
+RewriteBase /sites/blog_sync/blogp/
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([^/]*)/?([^/]*)/?([^/]*)/?([^/]*)/?([^/]*)/?$ index.php?pg=$1&pg2=$2&pg3=$3&pg4=$4&pg5=$5 [L,QSA]
+# >> URLs Amigaveis
